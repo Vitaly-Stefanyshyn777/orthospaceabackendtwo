@@ -33,26 +33,36 @@ async function bootstrap() {
           console.log("CORS request from origin:", origin);
         }
 
-        // Дозволяємо всі localhost порти та Railway домени
+        // Дозволяємо всі localhost порти, Railway домени та Vercel домени
         const allowedOrigins = [
           !origin, // Дозволяємо запити без origin (наприклад, Postman)
           origin?.startsWith("http://localhost:"),
           origin?.startsWith("http://127.0.0.1:"),
           origin === process.env.FRONTEND_URL,
+          // Orthospace домени
+          origin === "https://orthospacefront.vercel.app",
+          origin?.startsWith("https://orthospacefront.vercel.app"),
+          // Rekogrinik домени (існуючі)
           origin === "https://rekogrinik.cz",
           origin?.startsWith("https://rekogrinik.cz"),
           origin === "https://www.rekogrinik.cz",
           origin?.startsWith("https://www.rekogrinik.cz"),
           origin === "https://rekogrinikadmin-production.up.railway.app",
-          origin?.startsWith("https://rekogrinikadmin-production.up.railway.app"),
+          origin?.startsWith(
+            "https://rekogrinikadmin-production.up.railway.app"
+          ),
           origin === "https://rekogrinikfront-production.up.railway.app",
-          origin?.startsWith("https://rekogrinikfront-production.up.railway.app"),
+          origin?.startsWith(
+            "https://rekogrinikfront-production.up.railway.app"
+          ),
           origin === "https://rekogrinikfront-production-7069.up.railway.app",
-          origin?.startsWith("https://rekogrinikfront-production-7069.up.railway.app"),
+          origin?.startsWith(
+            "https://rekogrinikfront-production-7069.up.railway.app"
+          ),
           origin === "https://rekogrinikadmin-production-cf18.up.railway.app",
-          origin?.startsWith("https://rekogrinikadmin-production-cf18.up.railway.app"),
-          origin === "https://orthospaceadmintwo-4f1f.vercel.app",
-          origin?.startsWith("https://orthospaceadmintwo-4f1f.vercel.app"),
+          origin?.startsWith(
+            "https://rekogrinikadmin-production-cf18.up.railway.app"
+          ),
         ];
 
         if (allowedOrigins.some((condition) => condition === true)) {
