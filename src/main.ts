@@ -51,6 +51,8 @@ async function bootstrap() {
           origin?.startsWith("https://rekogrinikfront-production-7069.up.railway.app"),
           origin === "https://rekogrinikadmin-production-cf18.up.railway.app",
           origin?.startsWith("https://rekogrinikadmin-production-cf18.up.railway.app"),
+          origin === "https://orthospaceadmintwo-4f1f.vercel.app",
+          origin?.startsWith("https://orthospaceadmintwo-4f1f.vercel.app"),
         ];
 
         if (allowedOrigins.some((condition) => condition === true)) {
