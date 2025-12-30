@@ -42,6 +42,8 @@ async function bootstrap() {
           // Orthospace домени
           origin === "https://orthospacefront.vercel.app",
           origin?.startsWith("https://orthospacefront.vercel.app"),
+          origin === "https://orthospaceadmintwo-4f1f.vercel.app",
+          origin?.startsWith("https://orthospaceadmintwo-4f1f.vercel.app"),
           // Rekogrinik домени (існуючі)
           origin === "https://rekogrinik.cz",
           origin?.startsWith("https://rekogrinik.cz"),
